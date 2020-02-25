@@ -6,7 +6,7 @@ Write automated interoperability test scripts in Java or Javascript and run them
  * all web browser: Chrome, Firefox, Safari, Edge, Opera... on all OS (Linux, Windows, Mac, iOS and Android)
  * Mobile Native Apps on Android, iOS
  * Desktop Native Apps on Windows and MacOS
- * Electron Apps 
+ * Electron Apps
 
 
 __KITE__ can be setup on Windows, Mac or Linux.  The installation process only takes 10 to 15 minutes.  
@@ -41,7 +41,7 @@ See [LICENSE](LICENSE) for licensing.
 
 ## A. Install prerequisite software  
 
-You will need Git, JDK 8 and Maven. 
+You will need Git, JDK 8 and Maven.
 
 #### Git
 
@@ -57,10 +57,10 @@ You can download it from:
 
 If you are not familiar with Maven and/or new to the concept of PATH and environmnent variables, Maven's
  installation can prove quite tricky as it requires you to add JAVA_HOME to
- your environment variables and MAVEN/bin to your PATH. To make this easier, we're providing an installation script. 
+ your environment variables and MAVEN/bin to your PATH. To make this easier, we're providing an installation script.
  If you would like to use our script to install Maven, you can skip it for now and install it after cloning the git repo
  (following the instructions at B.2.).
- 
+
 Alternatively, if you are familiar with setting up Maven and configuring the PATH and environment variables, you can download [Maven](https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/) from  
 https://maven.apache.org/download.cgi
 
@@ -72,13 +72,13 @@ The following guides could help you:
 
 
 To verify your setup, in a new command prompt or shell terminal, type:
-``` 
+```
 mvn -version
 ```
 Expected output (for example on Windows 10):
 ```
-Apache Maven 3.6.1
-Maven home: C:\Program Files\Maven\apache-maven-3.6.1\bin\..
+Apache Maven 3.6.3
+Maven home: C:\Program Files\Maven\apache-maven-3.6.3\bin\..
 Java version: 1.8.0_191, vendor: Oracle Corporation
 Java home: C:\Program Files\Java\jdk1.8.0_191\jre
 Default locale: en_US, platform encoding: Cp1252
@@ -89,14 +89,14 @@ Install your favorite Java IDE. We recommend [IntelliJ IDEA Community](https://w
 &nbsp;    
 
 If you are on Mac and are using zsh, please make sure to add the following line add the end of your `~/.zshrc` file:
-``` 
+```
 source .bash_profile
 ```
 
 ## B. Install KITE 2.0
 
 1. Clone this repo into a folder __without any space__, for example under `\GitHub\`:  
-     
+
     ```
     mkdir GitHub
     cd GitHub
@@ -107,7 +107,7 @@ source .bash_profile
 2. Maven installation
 
     If you haven't installed Maven yet, you can install it using the installMaven script.
- 
+
     On Windows, open a Command Prompt window and enter the following commands:
 
     ```
@@ -119,13 +119,13 @@ source .bash_profile
     chmod -R +x scripts/linux
     scripts/linux/installMaven.sh
     ```     
-    
+
     2.3 On Mac, open a terminal and enter the following commands:
     ```
     chmod -R +x scripts/mac
     scripts/mac/installMaven.sh
     ```
-    
+
 3. Configure __KITE__  
 
 
@@ -141,55 +141,55 @@ source .bash_profile
     chmod +x configureLinux.sh
     ./configureLinux.sh
     ```     
-    
+
     3.3 On Mac, open a terminal and enter the following commands:
     ```
     chmod +x configureMac.sh  
     ./configureMac.sh
     ```
-    
-    During this step, you will be prompt to setup the local grid. This is an interactive setup. 
+
+    During this step, you will be prompt to setup the local grid. This is an interactive setup.
     It is important to configure the Firefox and Chrome versions according to the versions installed on your computer.  
-    If Chrome and/or Firefox are not installed, this script will automatically download and install the latest stable releases. 
-          
+    If Chrome and/or Firefox are not installed, this script will automatically download and install the latest stable releases.
+
     To check the browser versions:  
     __1. Chrome__  
     Open Chrome and enter <a href="chrome://settings/help" target="_blank">chrome://settings/help</a> into the address bar.
-       
+
     __2. Firefox__  
     Open Firefox, top right menu, then select Help, then About Firefox. You can also find out the latest version
      at [www.mozilla.org/en-US/firefox/releases/](https://www.mozilla.org/en-US/firefox/releases/).
-    
+
     Different browser versions require a different ChromeDriver (to control Chrome) and a different GeckoDriver (to control Firefox).
     You will need to find out what are the corresponding driver versions. Please visit the following two pages:
     * http://chromedriver.chromium.org/downloads
     * https://github.com/mozilla/geckodriver/releases  
- 
-    By default, the local grid setup script is configured for __Chrome__ version __80__ and __Firefox__ version __73__. 
+
+    By default, the local grid setup script is configured for __Chrome__ version __80__ and __Firefox__ version __73__.
     If these are the versions installed on your computer, you can safely use the default settings.
     Otherwise, you will need to edit the following settings when prompt to do so:  
-    
+
     ```
     CHROME_VERSION=80
     FIREFOX_VERSION=73
     CHROMEDRIVER_VERSION=80.0.3987.106
     GECKO_VERSION=v0.26.0
     ```
-    
+
     __Note:__ Please input only the major (i.e. 80 or 73) for the browser versions, but the full version with the minor (i.e. 80.0.3904.73 or v0.26.0) for the driver versions.     
    The latest version of ChromeDriver is available at: https://chromedriver.storage.googleapis.com/LATEST_RELEASE
    More details are available in the [local grid setup guide](scripts/README.md).
-    
+
     __3. Safari__  
     Safari is installed by default on MacOS, there is no need to download anything. You will only need to enable the 'Allow Remote Automation' option in Safari's Developer menu so it can be automated by KITE for testing.
-    
-    
-4. Compile 
 
-    
+
+4. Compile
+
+
 __On Windows:__  
-    Just type `c` (which will execute `mvn clean install -DskipTests`). 
-    
+    Just type `c` (which will execute `mvn clean install -DskipTests`).
+
     ```
     cd %KITE_HOME%
     c
@@ -221,17 +221,17 @@ If you are within a test folder, for example in KITE-AppRTC-Test, you can type _
 
 If you have chosen to skip the grid installation during configure, you can still do it
 by following [local grid setup guide](scripts/README.md).
-  
+
 &nbsp;    
 &nbsp;      
-      
 
-    
+
+
 ## D. Run the sample tests
 
 
 __Note:__ You will need to have your [local grid](scripts/README.md) running before you can execute any test.  
-You can check if your local grid is running and the browser versions installed by 
+You can check if your local grid is running and the browser versions installed by
 opening the [Grid Console](http://localhost:4444/grid/console).
 In the following example, we are assuming __Chrome__ version __80__ and __Firefox__ version __73__.
 
@@ -240,22 +240,22 @@ In the following example, we are assuming __Chrome__ version __80__ and __Firefo
 
 If your Grid is running on localhost and with __Chrome__ version __80__ and __Firefox__ version __73__ you can skip this step.
 
-Edit the file `./KITE-Example-Test/configs/search.local.config.json` with your favorite text editor. 
+Edit the file `./KITE-Example-Test/configs/search.local.config.json` with your favorite text editor.
 
-#### Version 
+#### Version
 You will need to change __`version`__ according to what is installed on your local grid.
-For example, if the latest stable version of __Chrome__ is __80__, you should set: 
+For example, if the latest stable version of __Chrome__ is __80__, you should set:
 ```json
       "browserName": "chrome",
       "version": "80",
       "platform": "localhost",
 ```
 
-#### Platform 
+#### Platform
 When KITE is running on the same computer as the Grid, it will detect the OS and interpret the plaform "localhost" and translate it to WINDOWS, LINUX or MAC.  
 If you want to run KITE against a Grid that is running on a different computer, you will need to change the platform according to what's available on your Grid
- and you will need to change the platform to "WINDOWS" to "LINUX" or "MAC". 
- 
+ and you will need to change the platform to "WINDOWS" to "LINUX" or "MAC".
+
 Example for Windows:  
 
 ```json
@@ -271,7 +271,7 @@ You can find more information about the Basic Configuration File [here](#basic-c
 
 To run the example test,  
 
-__On Windows:__ 
+__On Windows:__
 ```
 cd %KITE_HOME%\KITE-Example-Test
 r configs\search.local.config.json
@@ -439,4 +439,3 @@ Sample config files in `KITE-Example-Test/configs` contain the example with diff
 If the grid is running on localhost (same machine as KITE), then you can use `localhost` as the platform name, KITE will automatically set
  it according to your OS. However, if the grid or selenium node is not running on localhost, you must set the platform name according to
   the OS of the node (MAC, WINDOWS, LINUX, Android...)  
-

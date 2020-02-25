@@ -26,12 +26,12 @@
     <kite.framework.version>1.0.14</kite.framework.version>
     <!-- Core dependencies -->
     <kite.log4j.version>1.2.17</kite.log4j.version>
-    <kite.mvn.compiler.version>3.6.1</kite.mvn.compiler.version>
+    <kite.mvn.compiler.version>3.6.3</kite.mvn.compiler.version>
     <kite.java.version>1.8</kite.java.version>
     <kite.guava.version>25.1-jre</kite.guava.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- maven plugin versions, shouldn't need be changed very often -->
-    <kite.test.mvn.compiler.version>3.6.1</kite.test.mvn.compiler.version>
+    <kite.test.mvn.compiler.version>3.6.3</kite.test.mvn.compiler.version>
 
     <!--Compilation dependencies-->
     <kite.proguard-mvn.version>2.0.14</kite.proguard-mvn.version>
@@ -83,7 +83,7 @@
 
     <kite.extras.repo>com.github.CoSMoSoftware</kite.extras.repo>
 <!--    <kite.extras.repo>io.cosmosoftware.kite</kite.extras.repo>-->
-    
+
   </properties>
 
   <modules>

@@ -1,11 +1,11 @@
 @echo off
 echo.
-set MAVEN_VERSION=3.6.1
+set MAVEN_VERSION=3.6.3
 echo Please check the corresponding Maven version from:
 echo http://maven.apache.org/download.cgi
 echo currently the config file has the following version:
 echo MAVEN_VERSION=%MAVEN_VERSION%
-set /P c=Is this version correct?  (y/n/q)  
+set /P c=Is this version correct?  (y/n/q)
 if /I "%c%" EQU "N" goto :changeMaven
 if /I "%c%" EQU "Y" goto :install
 if /I "%c%" EQU "Q" goto :quit
@@ -22,7 +22,7 @@ rem download Maven with the specified version from the gridConfig.bat
 echo [Net.ServicePointManager]::SecurityProtocol = 'TLS11','TLS12','ssl3' >> installMaven.ps1
 echo Invoke-WebRequest -OutFile maven.zip https://www-us.apache.org/dist/maven/maven-3/%MAVEN_VERSION%/binaries/apache-maven-%MAVEN_VERSION%-bin.zip >> installMaven.ps1
 
-rem unzip the downloaded files 
+rem unzip the downloaded files
 Powershell.exe -executionpolicy remotesigned -File installMaven.ps1
 del /f installMaven.ps1
 jar xf maven.zip
